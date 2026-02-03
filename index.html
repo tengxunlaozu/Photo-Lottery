@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>photo-lottery抽奖系统</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <div class="sidebar" id="prizeSidebar">
+        <h3>奖项进度</h3>
+        <ul id="sidebarPrizeList">
+            <!-- Sidebar items injected here -->
+        </ul>
+    </div>
+
+    <div class="ui-overlay">
+        <div class="header">
+            <h1 id="title">2026 年会抽奖</h1>
+            <div class="prize-info" id="currentPrizeInfo">
+                正在抽取：<span id="prizeName">等待开始</span> (<span id="prizeCount">0</span>人)
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="importBtn" class="premium-btn">导入照片</button>
+            <button id="startBtn" class="premium-btn primary">开始抽奖</button>
+            <button id="settingsBtn" class="premium-btn">系统设置</button>
+        </div>
+    </div>
+
+    <!-- Hidden Folder Input -->
+    <input type="file" id="folderInput" webkitdirectory directory multiple style="display: none;">
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>系统设置</h2>
+            <div class="settings-group">
+                <h3>奖项配置</h3>
+                <table id="prizeTable">
+                    <thead>
+                        <tr>
+                            <th>启用</th>
+                            <th>奖项名称</th>
+                            <th>中奖人数</th>
+                        </tr>
+                    </thead>
+                    <tbody id="prizeList">
+                        <!-- Prizes will be injected here -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="settings-actions">
+                <button id="resetDataBtn" class="premium-btn danger">重置数据</button>
+                <button id="saveSettingsBtn" class="premium-btn primary">保存设置</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Modal -->
+    <div id="resultsModal" class="modal">
+        <div class="modal-content large">
+            <h2 id="winnerTitle">恭喜中奖！</h2>
+            <div id="winnerGrid" class="winner-grid">
+                <!-- Winners will be injected here -->
+            </div>
+            <button id="closeResultsBtn" class="premium-btn">关闭</button>
+        </div>
+    </div>
+
+    <!-- Full Image Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content image-viewer">
+            <span class="close-btn" id="closeImageBtn">&times;</span>
+            <img id="fullImage" src="" alt="Full size">
+        </div>
+    </div>
+
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
+
+    <!-- App Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/lottery-core.js"></script>
+    <script src="js/three-scene.js"></script>
+    <script src="js/ui-manager.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

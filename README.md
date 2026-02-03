@@ -1,5 +1,6 @@
 # Photo-Lottery
-Photo Lottery 抽奖仅允许导入照片，没有名称和职位
+Photo Lottery 本地html+js+css抽奖系统，现在几乎任何电脑clone下载打开即可使用。 
+抽奖仅允许导入照片，没有名称和职位
 
 # 自定义
 可以自定义奖项、和抽奖顺序
